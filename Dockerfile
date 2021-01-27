@@ -1,5 +1,7 @@
 FROM docker:18.09.2
+
 RUN apk add --no-cache \
+    curl \
     bash \
     coreutils \
     git \
