@@ -20,7 +20,7 @@ RUN wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | t
     && chmod +x /usr/local/bin/helm
 
 RUN curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/${SKAFFOLD_VERSION}/skaffold-linux-amd64 \
-    && sudo install skaffold /usr/local/bin/
+    && install skaffold /usr/local/bin/
 
 RUN pip install awscli:${AWS_CLI_VERSION}
 
