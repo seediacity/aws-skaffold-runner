@@ -12,9 +12,13 @@ RUN apk add --no-cache \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi
 
+ENV KUBECTL_VERSION="v1.18.2"
 ENV HELM_VERSION="v3.4.2"
 ENV SKAFFOLD_VERSION="v1.17.2"
 ENV AWS_CLI_VERSION="1.18.201"
+
+RUN curl -LO https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
+    && install kubectl /usr/local/bin/
 
 RUN wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
     && chmod +x /usr/local/bin/helm
