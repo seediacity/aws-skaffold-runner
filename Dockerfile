@@ -12,7 +12,7 @@ RUN apk add --no-cache \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi
 
-ENV KUBECTL_VERSION="v1.18.2"
+ENV KUBECTL_VERSION="v1.18.17"
 ENV HELM_VERSION="v3.4.2"
 ENV SKAFFOLD_VERSION="v1.17.2"
 ENV AWS_CLI_VERSION="1.18.201"
